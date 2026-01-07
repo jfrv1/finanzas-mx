@@ -51,7 +51,16 @@ button:hover {
   background: #157347;
 }
 
+
 #result {
   margin-top: 1rem;
-  font-weight: bold;
+  background: #f0f8ff;
+  padding: 1rem;
+  border-radius: 6px;
 }
+.tip {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
