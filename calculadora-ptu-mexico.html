@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de PTU en México | Finanzas México</title>
+  <meta name="description" content="Calcula de forma estimada cuánto podrías recibir de reparto de utilidades (PTU) en México.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Calculadora de Reparto de Utilidades (PTU) en México</h1>
+  <p>Estimación orientativa basada en tu salario y días trabajados.</p>
+</header>
+
+<main>
+
+  <section class="calculator">
+    <label>
+      Salario mensual (MXN):
+      <input type="number" id="salary" placeholder="Ej. 12000">
+    </label>
+
+    <label>
+      Días trabajados en el año:
+      <input type="number" id="daysWorked" placeholder="Ej. 300">
+    </label>
+
+    <label>
+      PTU total a repartir (opcional):
+      <input type="number" id="totalPTU" placeholder="Ej. 500000">
+    </label>
+
+    <button id="calculatePTU">Calcular PTU</button>
+
+    <p id="ptuResult"></p>
+    <p class="tip" id="ptuTip"></p>
+  </section>
+
+  <section class="info">
+    <p>
+      Esta calculadora ofrece una <strong>estimación</strong>.
+      El PTU real depende de las utilidades de la empresa y de todos los trabajadores.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Finanzas México</p>
+  <p>
+    <a href="index.html">Calculadora de ahorro</a> |
+    <a href="reparto-de-utilidades-ptu-mexico.html">Guía PTU</a> |
+    <a href="privacidad.html">Privacidad</a>
+  </p>
+</footer>
+
+<script src="ptu.js"></script>
+</body>
+</html>
