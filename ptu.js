@@ -4,6 +4,14 @@ const totalPTUInput = document.getElementById("totalPTU");
 const buttonPTU = document.getElementById("calculatePTU");
 const resultPTU = document.getElementById("ptuResult");
 const tipPTU = document.getElementById("ptuTip");
+salaryInput.addEventListener("input", function () {
+  salaryInput.value = formatCurrency(salaryInput.value);
+});
+
+totalPTUInput.addEventListener("input", function () {
+  totalPTUInput.value = formatCurrency(totalPTUInput.value);
+});
+
 
 const tipsPTU = [
   "Considera ahorrar una parte de tu PTU para emergencias.",
@@ -17,10 +25,18 @@ function randomPTUTip() {
   return tipsPTU[Math.floor(Math.random() * tipsPTU.length)];
 }
 
+function formatCurrency(value) {
+  const number = value.replace(/[^\d]/g, "");
+  if (number === "") return "";
+  return "$" + Number(number).toLocaleString("es-MX");
+}
+
+
 buttonPTU.addEventListener("click", function () {
-  const salary = Number(salaryInput.value);
+  const salary = Number(salaryInput.value.replace(/[^\d]/g, ""));
   const daysWorked = Number(daysInput.value);
-  const totalPTU = Number(totalPTUInput.value);
+  const totalPTU = Number(totalPTUInput.value.replace(/[^\d]/g, ""));
+
 
   resultPTU.style.color = "#333";
 
