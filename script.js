@@ -3,6 +3,9 @@ const monthsInput = document.getElementById("months");
 const button = document.getElementById("calculateBtn");
 const result = document.getElementById("result");
 const tipElement = document.getElementById("tip");
+goalInput.addEventListener("input", function () {
+  goalInput.value = formatCurrency(goalInput.value);
+});
 
 
 
@@ -32,9 +35,15 @@ function getRandomTip() {
   lastTipIndex = randomIndex;
   return tips[randomIndex];
 }
+function formatCurrency(value) {
+  const number = value.replace(/[^\d]/g, "");
+  if (number === "") return "";
+  return "$" + Number(number).toLocaleString("es-MX");
+}
+
 
 button.addEventListener("click", function () {
-  const goal = Number(goalInput.value);
+  const goal = Number(goalInput.value.replace(/[^\d]/g, ""));
   const months = Number(monthsInput.value);
   tipElement.textContent = "Consejo: " + getRandomTip();
 
