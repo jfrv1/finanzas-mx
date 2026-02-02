@@ -63,14 +63,32 @@ button.addEventListener("click", function () {
     return;
   }
 
-  const monthlySaving = goal / months;
+  const monthlySaving = Math.round(goal / months);
+  const biweeklySaving = Math.round(monthlySaving / 2);
+  const weeklySaving = Math.round(monthlySaving / 4);
 
-  result.innerHTML = `
+ 
+ 
+result.innerHTML = `
+  <p>
     Para alcanzar una meta de <strong>$${goal.toLocaleString("es-MX")}</strong> pesos
-    en <strong>${months}</strong> meses, necesitas ahorrar aproximadamente
-    <strong>$${monthlySaving.toLocaleString("es-MX", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    })}</strong> pesos al mes.
-  `;
+    en <strong>${months}</strong> meses, necesitas ahorrar:
+  </p>
+
+  <ul>
+    <li><strong>$${monthlySaving.toLocaleString("es-MX")}</strong> pesos al mes</li>
+    <li><strong>$${biweeklySaving.toLocaleString("es-MX")}</strong> pesos por quincena</li>
+    <li><strong>$${weeklySaving.toLocaleString("es-MX")}</strong> pesos por semana</li>
+  </ul>
+`;
+
+ 
+  // result.innerHTML = `
+  //  Para alcanzar una meta de <strong>$${goal.toLocaleString("es-MX")}</strong> pesos
+  //  en <strong>${months}</strong> meses, necesitas ahorrar aproximadamente
+  //  <strong>$${monthlySaving.toLocaleString("es-MX", {
+  //    minimumFractionDigits: 2,
+  //    maximumFractionDigits: 2
+  //  })}</strong> pesos al mes.
+  //`;
 });
